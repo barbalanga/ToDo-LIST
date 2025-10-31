@@ -1,7 +1,6 @@
 {
   "name": "todo-mvp-server",
   "version": "0.1.0",
-  "type": "commonjs",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
