@@ -12,13 +12,14 @@ const requireAuth = require('./middleware/auth');
 const app = express();
 
 app.use(cors({
-  origin: [
-    'https://deluxe-axolotl-432a86.netlify.app',
-    'http://localhost:4200'
-  ],
-  methods: ['GET','POST','PUT','DELETE'],
-  credentials: true
+  origin: ['https://deluxe-axolotl-432a86.netlify.app','http://localhost:4200'],
+  methods: ['GET','POST','PUT','DELETE','OPTIONS'],
+  allowedHeaders: ['authorization','content-type'],
+  credentials: true,
+  optionsSuccessStatus: 204
 }));
+app.options('*', cors());
+
 
 app.use(express.json());
 
